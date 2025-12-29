@@ -17,9 +17,9 @@ Make a secure webapp with React and Tailwind
 
 - `deno` for the runtime
 - `react` and `react-dom` for rendering
-- `tailwindcss` via `@hazae41/rewind` and `@hazae41/labase` for the styles
-- `esbuild` via `@hazae41/glace` for bundling
-- `@hazae41/immutable` for immutable caching
+- `tailwindcss` via [`@hazae41/rewind`](https://github.com/hazae41/rewind) and [`@hazae41/labase`](https://github.com/hazae41/labase) for the styles
+- `esbuild` via [`@hazae41/glace`](https://github.com/hazae41/glace) for bundling
+- [`@hazae41/immutable`](https://github.com/hazae41/immutable) for immutable caching
 
 ## Setup
 
