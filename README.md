@@ -69,6 +69,18 @@ The install command
 npm install
 ```
 
+#### Warning
+
+Vercel may add, modify, or remove some parts of your website with some feature slop
+
+This can make your website less secure or brick its integrity mechanisms, making your users see weird errors or unable to use your website at all
+
+So you have to disable the following options and any option you can suspect of modifying your website
+
+Both in your Vercel project (`https://vercel.com/hazae41s/starter/settings/general`) and in your Vercel account (`https://vercel.com/hazae41s/~/settings/general`) if wanted
+
+- General > Vercel Toolbar: disable everything
+
 ## Usage
 
 - Develop
