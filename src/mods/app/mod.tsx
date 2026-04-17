@@ -1,5 +1,5 @@
+import { Lang } from "@/libs/lang/mod.ts";
 import React from "react";
-import { Lang } from "../../libs/lang/mod.ts";
 
 React;
 
