@@ -1,4 +1,4 @@
-// deno-lint-ignore-file no-process-global no-unused-vars
+// deno-lint-ignore-file no-process-global
 
 /// <reference lib="dom" />
 
@@ -20,6 +20,8 @@ async function register() {
     if (active == null)
       return
     if (installing == null)
+      return
+    if (installing.scriptURL === active.scriptURL)
       return
 
     installing.addEventListener("statechange", async () => {
@@ -61,7 +63,10 @@ function Body() {
     register().catch(console.error)
   }, [])
 
-  return <App />
+  if (client)
+    return <App />
+  else
+    return null
 }
 
 // @ts-ignore: process not found
