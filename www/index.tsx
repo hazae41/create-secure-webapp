@@ -63,7 +63,7 @@ function Body() {
     register().catch(console.error)
   }, [])
 
-  return <div className="h-full w-full overflow-y-scroll opacity-0 data-[client=true]:opacity-100 data-[client=true]:animate-opacity-in"
+  return <div className="h-full w-full opacity-0 data-[client=true]:opacity-100 data-[client=true]:animate-opacity-in"
     data-client={client}>
     <App />
   </div>
