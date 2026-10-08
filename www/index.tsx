@@ -71,7 +71,7 @@ function Body() {
 
 // @ts-ignore: process not found
 if (process.env.PLATFORM === "browser") {
-  await new Rewind(document).hydrateOrThrow().then(() => hydrateRoot(document.body, <Body />))
+  await new Rewind(document).hydrate().then(() => hydrateRoot(document.body, <Body />))
 } else {
   const params = new URLSearchParams(location.search)
 
@@ -102,5 +102,5 @@ if (process.env.PLATFORM === "browser") {
 
   document.body.innerHTML = await prerender(<Body />)
 
-  await new Rewind(document).prerenderOrThrow()
+  await new Rewind(document).prerender()
 }
