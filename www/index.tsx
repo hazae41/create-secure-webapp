@@ -5,8 +5,9 @@
 import { dirs, Lang } from "@/libs/lang/mod.ts";
 import { App } from "@/mods/app/mod.tsx";
 import { immutable } from "@hazae41/immutable";
+import { ClientContext, useClient } from "@hazae41/react-client-context";
 import { Rewind } from "@hazae41/rewind";
-import React, { ReactNode, useEffect, useState } from "react";
+import React, { ReactNode, useEffect } from "react";
 import { hydrateRoot } from "react-dom/client";
 
 React;
@@ -46,7 +47,7 @@ async function register() {
 }
 
 function Body() {
-  const [client, setClient] = useState(false)
+  const client = useClient()
 
   useEffect(() => {
     const lang = Lang.get()
@@ -54,17 +55,19 @@ function Body() {
     document.documentElement.lang = lang
     document.documentElement.dir = dirs[lang]
 
-    setClient(true)
+    return
   }, [])
 
   useEffect(() => {
     register().catch(console.error)
   }, [])
 
-  return <div className="h-full w-full overflow-y-auto opacity-0 data-[client=true]:opacity-100 data-[client=true]:animate-opacity-in"
-    data-client={client}>
-    <App />
-  </div>
+  return <ClientContext value={client}>
+    <div className="h-full w-full overflow-y-auto opacity-0 data-[client=true]:opacity-100 data-[client=true]:animate-opacity-in"
+      data-client={client}>
+      <App />
+    </div>
+  </ClientContext>
 }
 
 // @ts-ignore: process not found
